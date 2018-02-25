@@ -1,0 +1,178 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'fonts.scss';
+
+/**
+ *  Defaults
+ */
+.iconChevronRight {
+    @include fontAwesome();
+
+    &:before {
+        content: $icon-chevron-right;
+    }
+}
+
+.iconLoaderContainer {
+    margin: 15px 0;
+    text-align: center;
+
+    .iconLoader {
+        @include fontAwesome();
+        @include spin(1s, 8);
+        font-size: 2.5em;
+
+        &:before {
+            content: $icon-loader;
+        }
+    }   
+}
+
+.colorBlue {
+    color: $color-blue;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+/**
+ *  Car Container
+ */
+.listingCarListContainer {
+    font-family: 'MuseoSans', Helvetica, Arial, sans-serif;
+
+    .carHireTitle {
+        font-size: 2em;
+        line-height:1em;
+    }
+    .carHireTravelPeriod {
+        font-size: .9em;
+    }
+    .carHirePerDay {
+        font-size: .8em;
+    }
+    .perDayLabel{
+        font-size: .7em;
+    }
+    .poweredBy {
+        font-size: .8em;
+        float: right;
+    }
+}
+
+/**
+ *  Car Block styles
+ */
+.carContainer {
+    display: inline-block;
+    width: 100%;
+    border: 2px solid $color-orange;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 5px;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+
+    .carImageContainer {
+        width: 100%;
+        box-sizing: border-box;
+
+        .carImage {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+
+            @media only screen and (min-width: $screen-sm-min) {
+                max-width: 100%;
+                width: auto;
+                height: auto;
+            }
+        }
+
+        @media only screen and (min-width: $screen-sm-min) {
+            float: left;
+            width: 25%;
+            height: auto;
+            padding: 5px 10px 0 10px;
+        }
+    }
+    
+    .carInfoContainer {
+        width: 100%;
+
+        .carTitle {
+            margin: 0;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            @include transition(ease-in-out, .2s);
+        }
+        .carClass {
+            color: $color-orange;
+        }
+        .carPrice {
+            font-weight: bold;
+            margin-top: 20px;
+            @include transition(ease-in-out, .2s);
+            
+            .price-main {
+                font-size: 1.5em;
+                display: block;
+            }
+        }
+
+        @media only screen and (min-width: $screen-sm-min) {
+            float: left;
+            width: 75%;
+        }
+    }
+
+    .nextStep {
+        color: $color-blue;
+        padding: 10px;
+        position: absolute;
+        right: -1px;
+        bottom: 15px;
+        @include transition(ease-in-out, .2s);
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        .carInfoContainer {
+            .carTitle {
+                color: $color-orange;
+            }
+            .carPrice {
+                color: $color-orange;
+
+                .colorBlue {
+                    color: $color-orange;
+                }
+            }
+        }
+
+        .nextStep {
+            color: $color-white;
+            background: $color-blue;
+            background: linear-gradient(to left, $color-blue 50%, $color-white 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+
+            &:before {
+                content: 'compare';
+                margin-right: 10px;
+            }
+        }
+    }
+
+    @media only screen and (min-width: $screen-sm-min) {
+        height: 130px;
+    }
+}

@@ -1,2 +1,2 @@
 # listing-widget
-Sample listing widget using ReactJS + Redux
+Sample car listing widget using ReactJS + Redux

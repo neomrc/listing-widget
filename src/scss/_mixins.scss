@@ -1,0 +1,21 @@
+@mixin transition($transition, $time) {
+    -webkit-transition: $transition $time;
+       -moz-transition: $transition $time;
+         -o-transition: $transition $time;
+            transition: $transition $time;
+}
+
+@mixin spin($time, $steps) {
+    -webkit-animation: fa-spin $time infinite steps($steps);
+            animation: fa-spin $time infinite steps($steps);
+}
+
+@mixin fontAwesome() {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    vertical-align: middle;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
